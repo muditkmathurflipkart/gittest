@@ -1,7 +1,16 @@
-Thumbthing game for Android
-A generic layer in Android app to integrate external libraries. This layer enables data exchange and flow interupts between the app and external libraries.
+The number of modules we are working on is bound to make our Android Retail App convoluted. We should divide our app into three parts:
+Code bundles: Modules which are an integral part of code but independently have have no meaning of their own. These have to be called by directly instantiating the classes of these modules. E.g. Networking module, dynamic class loading and sharing module.
+Independent modules: These are modules which can independently exist as apps but should be bundled with the Flipkart app as they are an integral part of the app. These modules should be treated as independent entities and should be instantiated through Intents and not by direct calls.
+Independent apps: These would be apps signed by the signing key of the Flipkart and would be downloaded as separate apps from the app store. Each independent app would have it's own copy of appropriate code bundles. Any module which is compelling for the user to download can go as independent app. A game of considerable size is a good candidate.
+We should work with this approach in mind so that 
+our code base remains manageable
+our code base remains reusable
+app is easier to download
+it's easy to add and remove a module 
+The code modules and independent modules can theoretically be updatable through dynamic jar loading (though I am skeptical about that approach).
 
+We should speedup on making our code more modular than it already is. Though we have started working towards it, let's take it up with a holistic approach,
 
+I have attached with this mail a visual representation of what I have mentioned above. Thanks for being with me through this long text.
 
-
-Coding, design and solutioning (solving a bigger problem)
+Moving to develop
